@@ -1,0 +1,109 @@
+{
+  "fullGames": 92,
+  "trainGames": 75,
+  "heldoutGames": 17,
+  "trainCards": 1572,
+  "heldoutCards": 357,
+  "candidateWithoutAffordable": {
+    "1": 3,
+    "2": 3,
+    "3": 1,
+    "4": 5,
+    "5": 1,
+    "6": 0
+  },
+  "handAndCandidateWithoutAffordable": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0
+  },
+  "initialWithoutOneCost": 11,
+  "bonusEnergyTestCards": 6,
+  "models": [
+    {
+      "name": "fitted-round-group",
+      "heldoutNllPerCard": 2.8348620449797934
+    },
+    {
+      "name": "fitted-energy-group",
+      "heldoutNllPerCard": 2.8374006070149425
+    },
+    {
+      "name": "fitted-round-card",
+      "heldoutNllPerCard": 2.849733279955312
+    },
+    {
+      "name": "current-v7",
+      "heldoutNllPerCard": 2.851861556287318
+    },
+    {
+      "name": "fitted-energy-card",
+      "heldoutNllPerCard": 2.8521730881248866
+    },
+    {
+      "name": "uniform-card",
+      "heldoutNllPerCard": 3.3065456358607674
+    }
+  ],
+  "fittedRoundGroupWeightsPercent": [
+    [
+      52.95,
+      29.05,
+      12.32,
+      3.65,
+      1.57,
+      0.46
+    ],
+    [
+      52.56,
+      27.78,
+      10.62,
+      4.98,
+      2.03,
+      2.03
+    ],
+    [
+      12.04,
+      50.2,
+      32.09,
+      3.64,
+      1.57,
+      0.46
+    ],
+    [
+      0.51,
+      11.14,
+      59.0,
+      24.05,
+      4.11,
+      1.19
+    ],
+    [
+      1.0,
+      2.43,
+      13.22,
+      49.81,
+      26.85,
+      6.69
+    ],
+    [
+      1.98,
+      2.05,
+      4.96,
+      15.39,
+      50.58,
+      25.04
+    ],
+    [
+      0.98,
+      1.6,
+      4.04,
+      13.89,
+      28.12,
+      51.37
+    ]
+  ]
+}

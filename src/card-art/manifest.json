@@ -1,0 +1,365 @@
+{
+  "sprites": {
+    "card_bg_01": "card_bg_01.webp",
+    "card_bg_02": "card_bg_02.webp",
+    "card_bg_03": "card_bg_03.webp",
+    "bg_card": "bg_card.webp",
+    "card_btn_01": "card_btn_01.webp",
+    "card_btn_02": "card_btn_02.webp",
+    "card_icon_01": "card_icon_01.webp",
+    "card_icon_02": "card_icon_02.webp",
+    "card_icon_03": "card_icon_03.webp",
+    "card_icon_robot": "card_icon_robot.webp",
+    "bullet-blue": "bullet-blue.webp",
+    "bullet-red": "bullet-red.webp",
+    "skill-hit": "skill-hit.webp",
+    "1": "field-1.webp",
+    "2": "field-2.webp",
+    "3": "field-3.webp",
+    "4": "field-4.webp",
+    "5": "field-5.webp",
+    "2-1": "field-2-1.webp",
+    "2-2": "field-2-2.webp",
+    "2-3": "field-2-3.webp",
+    "2-4": "field-2-4.webp"
+  },
+  "heroes": {
+    "小布": "hero_card_043.webp",
+    "弓箭手": "hero_card_027.webp",
+    "机器警察": "hero_card_026.webp",
+    "赏金猎人": "hero_card_038.webp",
+    "瑞文": "hero_card_034.webp",
+    "海森堡": "hero_card_033.webp",
+    "棒球手": "hero_card_047.webp",
+    "小飞侠": "hero_card_054.webp",
+    "喷火莉莉": "hero_card_031.webp",
+    "波雅": "hero_card_030.webp",
+    "杰森": "hero_card_056.webp",
+    "巨石强森": "hero_card_062.webp",
+    "马斯克": "hero_card_060.webp",
+    "川普": "hero_card_050.webp",
+    "奥巴马": "hero_card_057.webp",
+    "蜜雪": "hero_card_066.webp",
+    "成龙": "hero_card_067.webp",
+    "小丑": "hero_card_032.webp",
+    "戴安娜": "hero_card_036.webp",
+    "兰博": "hero_card_041.webp",
+    "侃爷": "hero_card_058.webp",
+    "红魔": "hero_card_061.webp",
+    "霍金": "hero_card_017.webp",
+    "终结者": "hero_card_063.webp",
+    "屠夫": "hero_card_025.webp",
+    "肯德基": "hero_card_019.webp",
+    "扎克伯格": "hero_card_055.webp",
+    "机修罗莉": "hero_card_059.webp",
+    "金三胖": "hero_card_064.webp",
+    "普京": "hero_card_065.webp",
+    "乔帮主": "hero_card_074.webp",
+    "典狱长赛斯": "hero_card_081.webp",
+    "修女瑟琳娜": "hero_card_078.webp",
+    "超能小布": "hero_card_079.webp",
+    "山鸡哥": "hero_card_082.webp",
+    "雾隐千代": "hero_card_068.webp"
+  },
+  "sources": {
+    "card_bg_01": {
+      "width": 721,
+      "height": 1760,
+      "source_sha256": "3dbf964be1cd9064149c7b14cccc31d358dd0965c1c6d2c760b6ae455ba81563"
+    },
+    "5": {
+      "width": 460,
+      "height": 291,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "4": {
+      "width": 400,
+      "height": 237,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "2-4": {
+      "width": 387,
+      "height": 292,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "2-1": {
+      "width": 386,
+      "height": 293,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "2-2": {
+      "width": 377,
+      "height": 281,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "2-3": {
+      "width": 366,
+      "height": 245,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "3": {
+      "width": 360,
+      "height": 234,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "2": {
+      "width": 360,
+      "height": 235,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "1": {
+      "width": 341,
+      "height": 207,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "bg_card": {
+      "width": 184,
+      "height": 222,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_bg_02": {
+      "width": 130,
+      "height": 184,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_bg_03": {
+      "width": 130,
+      "height": 184,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_btn_02": {
+      "width": 181,
+      "height": 97,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_btn_01": {
+      "width": 181,
+      "height": 97,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_icon_01": {
+      "width": 90,
+      "height": 90,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_icon_02": {
+      "width": 90,
+      "height": 90,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_icon_03": {
+      "width": 90,
+      "height": 90,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "card_icon_robot": {
+      "width": 50,
+      "height": 50,
+      "source_sha256": "02a4d7b5061d0385f2136e3a29e7afeb393d8afca1d6a825deaeaf7b8ca3ac0c"
+    },
+    "hero_card_043": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_027": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_026": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_038": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_034": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_033": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_047": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_054": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_031": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_030": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_056": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_062": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_060": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_050": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_057": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_066": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_067": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_032": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_036": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_041": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_058": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_061": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_017": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_063": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_025": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_019": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_055": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_059": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_064": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_065": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_074": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_081": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_078": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_079": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_082": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "hero_card_068": {
+      "width": 135,
+      "height": 185,
+      "source_sha256": "ff9a4f95c0d4b9f11e10a632d156ee146f538fa4ddff2e7e9ae3638ce116acb8"
+    },
+    "bullet-blue": {
+      "width": 192,
+      "height": 30,
+      "frames": 4,
+      "source_sha256": "58e26605a19b5b01959dabdd7a76533bf2ef391e2822bd29e44e88cdccf91315"
+    },
+    "bullet-red": {
+      "width": 192,
+      "height": 30,
+      "frames": 4,
+      "source_sha256": "58e26605a19b5b01959dabdd7a76533bf2ef391e2822bd29e44e88cdccf91315"
+    },
+    "skill-hit": {
+      "width": 480,
+      "height": 80,
+      "frames": 6,
+      "source_sha256": "58e26605a19b5b01959dabdd7a76533bf2ef391e2822bd29e44e88cdccf91315"
+    }
+  },
+  "provenance": {
+    "card_bundle": "ui_cardgame/config.b3dc8.json",
+    "effect_bundle": "ui_effect_card_game (native kapai_zidan atlas)",
+    "hero_package": "HeroHead/hero_card_*",
+    "layout": "CardItem 130x186; BattlefieldItem 200x240; board cards two columns at 0.6 scale"
+  }
+}

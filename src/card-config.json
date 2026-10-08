@@ -1,0 +1,366 @@
+{
+  "CardGameParamCfg": [
+    {
+      "drawCardCount": 1,
+      "battlefieldCardLimit": 4,
+      "cardLimit": 5,
+      "matchTimeout": 60,
+      "roundLimitedTime": 60,
+      "selectLimitedTime": 30,
+      "freeMatchCount": 10,
+      "diamondMatchCost": 100,
+      "matchTime": [
+        [
+          "12:30:00",
+          "13:29:59"
+        ],
+        [
+          "19:00:00",
+          "19:59:59"
+        ]
+      ]
+    }
+  ],
+  "CardGameRoundCfg": [
+    {
+      "round": 1,
+      "energy": 1,
+      "unlockBattleId": 1
+    },
+    {
+      "round": 2,
+      "energy": 2,
+      "unlockBattleId": 2
+    },
+    {
+      "round": 3,
+      "energy": 3,
+      "unlockBattleId": 3
+    },
+    {
+      "round": 4,
+      "energy": 4,
+      "unlockBattleId": 3
+    },
+    {
+      "round": 5,
+      "energy": 5,
+      "unlockBattleId": 3
+    },
+    {
+      "round": 6,
+      "energy": 6,
+      "unlockBattleId": 3
+    }
+  ],
+  "GameCardCfg": [
+    {
+      "heroId": "小布",
+      "cost": 1,
+      "power": 2,
+      "effectType": "持续",
+      "effectDesc": "【持续】本战场每拥有1张己方卡牌，此卡+1战力"
+    },
+    {
+      "heroId": "弓箭手",
+      "cost": 1,
+      "power": 2,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】额外获得1张手牌"
+    },
+    {
+      "heroId": "机器警察",
+      "cost": 1,
+      "power": 2,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】作为本战场己方的首张卡牌，自身+3战力"
+    },
+    {
+      "heroId": "赏金猎人",
+      "cost": 1,
+      "power": 3,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】全场随机一张己方卡牌+2战力"
+    },
+    {
+      "heroId": "瑞文",
+      "cost": 1,
+      "power": 3,
+      "effectType": "持续",
+      "effectDesc": "【持续】本战场所有敌方卡牌-1战力"
+    },
+    {
+      "heroId": "海森堡",
+      "cost": 2,
+      "power": 2,
+      "effectType": "持续",
+      "effectDesc": "【持续】每回合结束，自身+1战力"
+    },
+    {
+      "heroId": "棒球手",
+      "cost": 2,
+      "power": 2,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】下回合额外获得1点能量"
+    },
+    {
+      "heroId": "小飞侠",
+      "cost": 2,
+      "power": 2,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】使敌方下一回合无法在此战场放置卡牌"
+    },
+    {
+      "heroId": "喷火莉莉",
+      "cost": 2,
+      "power": 3,
+      "effectType": "持续",
+      "effectDesc": "【持续】本战场所有己方卡牌+1战力"
+    },
+    {
+      "heroId": "波雅",
+      "cost": 2,
+      "power": 3,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】本战场随机1张敌方卡牌-3战力"
+    },
+    {
+      "heroId": "杰森",
+      "cost": 3,
+      "power": 3,
+      "effectType": "持续",
+      "effectDesc": "【持续】本战场敌方卡牌不能触发[揭示]效果"
+    },
+    {
+      "heroId": "巨石强森",
+      "cost": 3,
+      "power": 4,
+      "effectType": "持续",
+      "effectDesc": "【持续】本战场己方卡牌≥2张时，自身+3战力"
+    },
+    {
+      "heroId": "马斯克",
+      "cost": 3,
+      "power": 3,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】另外两处海域各随机一张己方卡牌+3战力"
+    },
+    {
+      "heroId": "川普",
+      "cost": 4,
+      "power": 4,
+      "effectType": "持续",
+      "effectDesc": "【持续】所在战场所有[持续]卡牌额外+2战力"
+    },
+    {
+      "heroId": "奥巴马",
+      "cost": 4,
+      "power": 4,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】将随机一张敌方卡牌移动至其他海域"
+    },
+    {
+      "heroId": "蜜雪",
+      "cost": 4,
+      "power": 5,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】本战场我方战力落后时，自身+4战力"
+    },
+    {
+      "heroId": "成龙",
+      "cost": 4,
+      "power": 5,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】本战场所有[揭示]卡牌立刻再次触发"
+    },
+    {
+      "heroId": "小丑",
+      "cost": 4,
+      "power": 5,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】敌方单张最高战力卡牌的战力减半"
+    },
+    {
+      "heroId": "戴安娜",
+      "cost": 5,
+      "power": 0,
+      "effectType": "持续",
+      "effectDesc": "【持续】本战场己方总战力翻倍"
+    },
+    {
+      "heroId": "兰博",
+      "cost": 5,
+      "power": 5,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】复制场上一张己方揭示卡牌效果（仅生效一次）"
+    },
+    {
+      "heroId": "侃爷",
+      "cost": 5,
+      "power": 5,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】移除当前战场敌方卡牌至仅剩2张卡牌"
+    },
+    {
+      "heroId": "红魔",
+      "cost": 6,
+      "power": 1,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】移除当前战场的所有敌方卡牌"
+    },
+    {
+      "heroId": "霍金",
+      "cost": 6,
+      "power": 7,
+      "effectType": "持续",
+      "effectDesc": "【持续】全场每存在1张持续卡牌，自身+2战力"
+    },
+    {
+      "heroId": "终结者",
+      "cost": 6,
+      "power": 7,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】每剩余1张手牌，自身+2战力"
+    },
+    {
+      "heroId": "屠夫",
+      "cost": 3,
+      "power": 4,
+      "effectType": "持续",
+      "effectDesc": "【持续】每回合结束，若本战场我方战力落后于对手，自身+2战力"
+    },
+    {
+      "heroId": "肯德基",
+      "cost": 2,
+      "power": 3,
+      "effectType": "持续",
+      "effectDesc": "【持续】每回合结束，若本战场存在2张以上我方的[持续]卡牌，自身+1战力"
+    },
+    {
+      "heroId": "扎克伯格",
+      "cost": 4,
+      "power": 5,
+      "effectType": "持续",
+      "effectDesc": "【持续】每回合结束，随机一张相邻战场友方卡牌+2战力"
+    },
+    {
+      "heroId": "机修罗莉",
+      "cost": 1,
+      "power": 2,
+      "effectType": "持续",
+      "effectDesc": "【持续】我方所有[每回合结束]效果，提升战力数值额外+1"
+    },
+    {
+      "heroId": "金三胖",
+      "cost": 2,
+      "power": 3,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】本战场所有友方卡牌+4战力"
+    },
+    {
+      "heroId": "普京",
+      "cost": 4,
+      "power": 6,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】随机一个战力落后的战场，该战场中随机一张我方卡牌+3战力"
+    },
+    {
+      "heroId": "乔帮主",
+      "cost": 3,
+      "power": 4,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】下回合额外获得2点能量"
+    },
+    {
+      "heroId": "典狱长赛斯",
+      "cost": 5,
+      "power": 6,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】自身战力提高50%"
+    },
+    {
+      "heroId": "修女瑟琳娜",
+      "cost": 2,
+      "power": 2,
+      "effectType": "持续",
+      "effectDesc": "【持续】本战场所有敌方卡牌-2战力"
+    },
+    {
+      "heroId": "超能小布",
+      "cost": 3,
+      "power": 4,
+      "effectType": "持续",
+      "effectDesc": "【持续】每回合结束，本战场敌方战力最高卡牌-2战力"
+    },
+    {
+      "heroId": "山鸡哥",
+      "cost": 3,
+      "power": 2,
+      "effectType": "揭示",
+      "effectDesc": "【揭示】消除此战场中当前所有敌方[持续]效果"
+    },
+    {
+      "heroId": "雾隐千代",
+      "cost": 4,
+      "power": 3,
+      "effectType": "持续",
+      "effectDesc": "【持续】对手不能在此战场放置能量≥4的卡牌"
+    }
+  ],
+  "CardGameBattleFieldCfg": [
+    {
+      "battlefieldId": 1,
+      "battlefieldRes": "2-1",
+      "battlefieldName": "太阳岛",
+      "effectDesc": "每回合结束，本战场所有【持续】卡牌战力+1"
+    },
+    {
+      "battlefieldId": 2,
+      "battlefieldRes": "2-2",
+      "battlefieldName": "铁锈湾",
+      "effectDesc": "本战场所有【持续】卡牌战力+2"
+    },
+    {
+      "battlefieldId": 3,
+      "battlefieldRes": "2-3",
+      "battlefieldName": "水之都",
+      "effectDesc": "本战场所有【揭示】卡牌战力+2"
+    },
+    {
+      "battlefieldId": 4,
+      "battlefieldRes": "2-4",
+      "battlefieldName": "风栖港",
+      "effectDesc": "本战场己方卡牌数≥3时，所有己方卡牌战力+3"
+    },
+    {
+      "battlefieldId": 5,
+      "battlefieldRes": "5",
+      "battlefieldName": "山景城",
+      "effectDesc": "回合4结束后，此处战力最高卡牌战力+5"
+    },
+    {
+      "battlefieldId": 6,
+      "battlefieldRes": "1",
+      "battlefieldName": "哨塔",
+      "effectDesc": "玩家在此打出的第一张卡牌战力+5"
+    },
+    {
+      "battlefieldId": 7,
+      "battlefieldRes": "2",
+      "battlefieldName": "营地",
+      "effectDesc": "每回合结束，随机一张卡牌战力+2"
+    },
+    {
+      "battlefieldId": 8,
+      "battlefieldRes": "3",
+      "battlefieldName": "堡垒",
+      "effectDesc": "本战场4能量以上卡牌战力+4"
+    },
+    {
+      "battlefieldId": 9,
+      "battlefieldRes": "4",
+      "battlefieldName": "要塞",
+      "effectDesc": "本战场3能量以下卡牌战力+2"
+    }
+  ]
+}
