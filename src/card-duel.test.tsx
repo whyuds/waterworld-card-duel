@@ -17,6 +17,11 @@ describe('standalone human vs AI entry',()=>{
     expect(html).toContain('<dialog');expect(html).toContain('选中的卡牌加入手牌');
     expect(html).not.toContain('① 选一张牌');
     expect(html).toContain('查看战场');expect(html).toContain('duel-draft-dialog');
-    expect(html).toContain('拖动或按方向键');
+    expect(html).not.toContain('duel-dialog-drag');
+    expect(html).not.toContain('⠿ 移动');
+    expect(html).toContain('按住标题移动窗口；方向键微调');
+    expect(html).toContain('AI思考时间');
+    expect(html).toContain('AI实际思考状态');
+    expect(html).toContain('AI 与你同时思考，准备好后直接出牌。');
   });
 });

@@ -1,5 +1,5 @@
 {
-  "originBaseCommit": "fa0e9cf473532ccc11980d936f61aa32aaafddff",
+  "originBaseCommit": "2204bbdce8dafcc3aeefff972d78dc71028a11e7",
   "files": [
     "CardDuel.tsx",
     "card-duel-main.tsx",
@@ -21,7 +21,7 @@
     "card-replay.test.ts"
   ],
   "sha256": {
-    "CardDuel.tsx": "c0e72e10761d1141186a27fb3a9ee3b07f53ccf2af32f27f28b5d5a6ba5239fd",
+    "CardDuel.tsx": "8cf2341149e9a3c5c1216a3833bca34ccb6d61c5e77373282babf504086f375d",
     "card-duel-main.tsx": "c0fb0f88b1f952b38e90c3283df31e68b7ef2343505ccb23f7425ad2e99e3e4a",
     "card-engine.ts": "5cc8b9aa90f2037e4f11cf3f38a33c3816d8f8a3b50a4685b1ca78cce50c2a41",
     "card-config.json": "b4c4465a6e472cb46e5492ca4d65051fb398eaa4b7da30e73eff207823640769",
@@ -31,12 +31,12 @@
     "DuelCard.tsx": "c29d702c97bcfb54fb27064a8c8ae71ac5488946d47e1d160c6b043d8957bf56",
     "DuelEffects.tsx": "3f398444fc616c5ea1b19b50072bb16265bb34c4771e42382fb71f0e5e54db26",
     "duel-art.ts": "d7c1d0d0a25cdb3ac9d9755b31443c66337870f41eafaed3f0844d1ffeaf9c89",
-    "card-duel.css": "92b4bf222eceb237991b3db9219f7f72cda4beb5dcc4e4be19d8bc93adce0008",
+    "card-duel.css": "5211f011020303b51219e9f2276b51e4ea7433af3f24de0a391d7ece3ebfd8fd",
     "waterworld-cards.css": "147046defa702e05d90ee1dac5349969a7fed9dfbe572fadccab13566cb0b79c",
     "card-engine.test.ts": "50d762bad6c2112f364d970c131e9ee31d0a2ecc37ac36782dab52746f557779",
     "card-dealing.test.ts": "5a01a48903e11907cdf4a25e01d2758df82a55d4d4d7cd6edcc988d328b0842e",
     "card-duel-actions.test.ts": "4a4273ebdc246761754197ad8f7875f3cb3472c4cfd667927588db4de823a8db",
-    "card-duel.test.tsx": "d0b10d37b5c5606f71e1dcde14bbc800aaae9aa86d988480577c8e843ddce2cb",
+    "card-duel.test.tsx": "0bf662b99d28df0d4776e7026949288ce54756c9701931b3cac696b0af0c2fa2",
     "card-shared-deck.test.ts": "45a805dab4033f04aa6736b939e0115b572b10073ef82d0f489a90e846633bcf",
     "card-replay.test.ts": "5c0cb86cea92256a587f5944c9f47acc8b08e1bc308ee53858842799e57f51ac"
   },

@@ -37,7 +37,7 @@ function DuelDialog({title, children, onClose, inspect}:{title:string; children:
   const begin = (e:PointerEvent<HTMLElement>) => {
     if (!inspect || e.button !== 0) return;
     const button = (e.target as HTMLElement).closest('button');
-    if (button && !button.classList.contains('duel-dialog-drag')) return;
+    if (button) return;
     const rect = ref.current!.getBoundingClientRect();
     dragOrigin.current = {x:e.clientX, y:e.clientY, left:rect.left, top:rect.top};
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -50,12 +50,13 @@ function DuelDialog({title, children, onClose, inspect}:{title:string; children:
     style={position ? {position:'fixed', margin:0, left:position.left, top:position.top, right:'auto', bottom:'auto'} : undefined}
     onCancel={e => {e.preventDefault(); onClose?.();}}>
     <header onPointerDown={begin} onPointerMove={move} onPointerUp={() => {dragOrigin.current = null;}} onPointerCancel={() => {dragOrigin.current = null;}}>
-      <h2>{title}</h2><div className="duel-dialog-tools">{inspect && <>
-        <button className="duel-dialog-drag" aria-label="移动选牌窗口，拖动或按方向键" title="拖动移动窗口；方向键微调" onKeyDown={e => {
+      <h2 tabIndex={inspect ? 0 : undefined} title={inspect ? '按住标题移动窗口；方向键微调' : undefined} onKeyDown={e => {
+          if (!inspect) return;
           const delta:Record<string,number[]> = {ArrowLeft:[-20,0], ArrowRight:[20,0], ArrowUp:[0,-20], ArrowDown:[0,20]};
           if (!delta[e.key]) return; e.preventDefault();
           const box = ref.current!.getBoundingClientRect();setPosition(fit(box.left + delta[e.key][0], box.top + delta[e.key][1]));
-        }}>⠿ 移动</button><button aria-expanded={showRules} onClick={() => setShowRules(!showRules)}>{showRules ? '收起战场' : '查看战场'}</button>
+        }}>{title}</h2><div className="duel-dialog-tools">{inspect && <>
+        <button aria-expanded={showRules} onClick={() => setShowRules(!showRules)}>{showRules ? '收起战场' : '查看战场'}</button>
       </>}{onClose && <button aria-label="关闭详情" onClick={onClose}>×</button>}</div>
     </header>{showRules && <div className="duel-rules-peek" role="region" aria-label="三个战场完整规则">{inspect}</div>}{children}
   </dialog>;
@@ -65,7 +66,7 @@ export function CardDuel({initialSeed}:{initialSeed?:number} = {}) {
   const [seed, setSeed] = useState(() => initialSeed ?? freshSeed()), [game, setGame] = useState<State>(() => newGame(seed, ROUND_DEAL_PROFILE));
   const [pick, setPick] = useState(-1), [moves, setMoves] = useState<Plan['moves']>([]), [selected, setSelected] = useState('');
   const [ackRound, setAckRound] = useState(0), [detail, setDetail] = useState<Detail|null>(null), [confirmNew, setConfirmNew] = useState(false);
-  const [advice, setAdvice] = useState<Advice|null>(null), [thinking, setThinking] = useState(false), [error, setError] = useState('');
+  const [advice, setAdvice] = useState<Advice|null>(null), [thinking, setThinking] = useState(false), [thinkingMs, setThinkingMs] = useState(0), [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false), [replay, setReplay] = useState<{state:State; label:string; cue?:ReplayCue; tick:number}|null>(null);
   const [depth, setDepth] = useState(15000), [log, setLog] = useState<RecordTurn[]>([]), [catalog, setCatalog] = useState(false);
   const [drag, setDrag] = useState<{uid:string; x:number; y:number; over:number|null}|null>(null);
@@ -83,23 +84,34 @@ export function CardDuel({initialSeed}:{initialSeed?:number} = {}) {
     setAdvice(null); setError('');
     if (game.round > 6) return;
     const w = new Worker(new URL('./card-worker.ts', import.meta.url), {type:'module'});
-    worker.current = w; setThinking(true);
+    worker.current = w; setThinking(true); setThinkingMs(0);
+    const started = performance.now();
+    const clock = setInterval(() => {if (worker.current === w) setThinkingMs(performance.now() - started);}, 200);
     w.onmessage = e => {
       if (worker.current !== w) return;
+      clearInterval(clock);
       setThinking(false);
       if (e.data.error) {setError(e.data.error); setSubmitted(false);} else setAdvice(e.data.result);
       w.terminate(); worker.current = null;
     };
     w.onerror = () => {
       if (worker.current !== w) return;
+      clearInterval(clock);
       setThinking(false); setSubmitted(false); setError('AI计算失败，请重新开局'); w.terminate(); worker.current = null;
     };
     w.postMessage({action:'search', observation:observe(game, 1), options:{timeMs:depth, iterations:30000, width:depth >= 8000 ? 32 : 24, seed:seed + game.round * 971}});
-    return () => {w.terminate(); worker.current = null;};
+    return () => {clearInterval(clock); w.terminate(); if (worker.current === w) worker.current = null;};
   }, [game, depth, seed]);
   useEffect(() => () => {if (timer.current) clearTimeout(timer.current);}, []);
 
   const finished = game.round > 6, locked = submitted || !!replay;
+  const thinkingLabel = thinking ? `已思考 ${(thinkingMs / 1000).toFixed(1)} 秒`
+    : advice ? `已就绪 · 实算 ${(advice.elapsedMs / 1000).toFixed(1)} 秒 · ${advice.simulations} 次推演` : error ? '计算失败' : '准备中';
+  const thinkingPanel = <div className="duel-thinking" aria-label="AI实际思考状态">
+    <div><strong>AI · {depth / 1000} 秒档</strong><span>{thinkingLabel}</span></div>
+    <progress aria-label="AI思考预算进度" max={depth} value={advice ? depth : Math.min(depth, thinkingMs)}/>
+    <small>AI 与你同时思考，准备好后直接出牌。</small>
+  </div>;
   const offerAllowed = game.offers[0].length > 0 && game.hands[0].length < 5;
   const drafting = !finished && !locked && ackRound !== game.round;
   const picked = pick >= 0 && offerAllowed ? card(game.offers[0][pick], 'pick:0') : null;
@@ -201,6 +213,7 @@ export function CardDuel({initialSeed}:{initialSeed?:number} = {}) {
       <div><small>能量</small><b><img src={duelSprite('card_icon_01')} alt=""/> {finished ? 0 : energy} / {finished ? 0 : game.energy[0]}</b></div>
       <div><small>先手</small><b>{game.priority === 0 ? '你' : 'AI'}</b></div>
       <div className="duel-ai-state"><small>AI</small><b>{finished ? '已结束' : replay ? '揭示中' : thinking ? '思考中…' : '已就绪'}</b></div></section>
+    {!finished && !replay && !drafting && thinkingPanel}
     {finished && <section className="duel-result" role="status"><h2>{winner(game) === 0 ? '你赢了！' : winner(game) === 1 ? 'AI 赢下了这一局' : '本局平局'}</h2>
       <p>你拿下 {zoneWins(game, 0)} 处战场，AI 拿下 {zoneWins(game, 1)} 处。{sweep(game, 1) ? 'AI 三战场全胜，本局达到目标。' : 'AI 未达到三战场全胜目标。'}</p>
       <button className="primary" onClick={() => restart()}>再战一局</button><button onClick={() => restart(true)}>同一开局再挑战</button><button onClick={exportReplay}>保存本局复盘</button></section>}
@@ -252,6 +265,8 @@ export function CardDuel({initialSeed}:{initialSeed?:number} = {}) {
       {offerAllowed ? <><p>选中的卡牌加入手牌，之后可出战或留牌。</p><div className="duel-offers">{game.offers[0].map((id, i) =>
         <button className="duel-card-button" key={i} onClick={() => choose(i)} aria-label={`选取${CARDS[id].heroId}`}><PlayingCard c={card(id, 'offer' + i)}/><span className="duel-offer-desc">{CARDS[id].effectDesc}</span><b>选择</b></button>)}</div></>
         : <><p>{game.hands[0].length >= 5 ? '已持有5张手牌，本回合不再抽牌。' : '共享牌池没有可选的新牌，已有手牌仍可出战。'}</p><button className="primary" onClick={() => setAckRound(game.round)}>继续本回合</button></>}
+      <details className="duel-think-settings"><summary>AI思考时间 · {depth / 1000} 秒</summary><div className="duel-controls">{[1500, 3500, 8000, 15000, 30000].map(t => <button aria-pressed={t === depth} className={t === depth ? 'active' : ''} key={t} onClick={() => setDepth(t)}>{t / 1000}秒思考</button>)}</div></details>
+      {thinkingPanel}
     </DuelDialog>}
     {detail && !drafting && <DuelDialog title={'card' in detail ? CARDS[detail.card.id].heroId : FIELDS.find(f => f.battlefieldId === view.zones[detail.zone].id)!.battlefieldName} onClose={() => setDetail(null)}>
       {'card' in detail ? <><PlayingCard c={detail.card}/><p>{CARDS[detail.card.id].effectDesc}</p><p>{CARDS[detail.card.id].effectType || '无特殊效果'} · 费用 {CARDS[detail.card.id].cost} · 当前战力 {detail.card.power}</p>
@@ -264,7 +279,8 @@ export function CardDuel({initialSeed}:{initialSeed?:number} = {}) {
     <details className="duel-stats"><summary>对局统计 · 你胜 {scores.human} / AI胜 {scores.ai}</summary><section className="duel-score"><strong>本版发牌规则下的完整对局</strong>
       <p>你胜 {scores.human} · AI 胜 {scores.ai} · 平 {scores.draws}；AI 三战场全胜 {scores.aiSweeps} / {scores.games}{scores.games ? `（${(100 * scores.aiSweeps / scores.games).toFixed(1)}%）` : ''}</p>
       <small>只在完整6回合结束后计数，提前重开不计入已完成对局；旧版本统计保留在本机，不混入本版。人机挑战不能替代官方试玩验收。</small></section></details>
-    <details><summary>AI难度、规则与评测边界</summary><div className="duel-controls">{[1500, 3500, 8000, 15000, 30000].map(t => <button disabled={!finished && (log.length > 0 || locked)} className={t === depth ? 'active' : ''} key={t} onClick={() => setDepth(t)}>{t / 1000}秒思考</button>)}</div>
+    <details><summary>AI难度、规则与评测边界</summary><div className="duel-controls">{[1500, 3500, 8000, 15000, 30000].map(t => <button disabled={locked} aria-pressed={t === depth} className={t === depth ? 'active' : ''} key={t} onClick={() => setDepth(t)}>{t / 1000}秒思考</button>)}</div>
+      <p>这里设置每回合的思考预算；AI在你选牌、摆牌时同时思考。修改后重新计算本回合，实际用时和推演次数显示在上方。较长时间允许更多推演，不保证每局更强，也不会额外等待凑满秒数。</p>
       <p>官方规则两处战场胜出即可赢一局。AI争取三个战场全部获胜，不读取你的手牌或本回合安排。90%三星通过率仍未达到。</p>
       <p>发牌按回合偏向相应费用：开局以低费为主，后期以高费为主；少见费用仍可能出现。依据454局完整历史官方对战拟合，并用86局留出对战比较模型，不代表已获得官方发牌算法。双方使用同一规则，保留的旧手牌不因回合变化而消失。</p>
       <p>双方共用36张英雄牌池。一方取得后，另一方不能再取得同一英雄；未选中的候选之后仍可能出现。AI按共享牌池推演，不读取你的隐藏手牌或本回合选择。</p>
